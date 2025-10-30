@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Sensor Inteligente de Respiración</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sensor Inteligente de Respiración</h1>
+            <p class="subtitle">Monitoreo en tiempo real de ejercicios respiratorios</p>
+        </header>
+
+        <div class="control-panel">
+            <button id="startBtn" class="btn btn-primary">Iniciar Análisis</button>
+            <button id="stopBtn" class="btn btn-secondary" disabled>Detener</button>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card green">
+                <h3>Fuerza</h3>
+                <div class="metric-value" id="fuerza">0%</div>
+                <div class="metric-bar">
+                    <div class="bar-fill" id="fuerzaBar"></div>
+                </div>
+            </div>
+
+            <div class="metric-card blue">
+                <h3>Duración</h3>
+                <div class="metric-value" id="duracion">0s</div>
+                <div class="metric-bar">
+                    <div class="bar-fill" id="duracionBar"></div>
+                </div>
+            </div>
+
+            <div class="metric-card purple">
+                <h3>Ritmo</h3>
+                <div class="metric-value" id="ritmo">0 BPM</div>
+                <div class="metric-bar">
+                    <div class="bar-fill" id="ritmoBar"></div>
+                </div>
+            </div>
+
+            <div class="metric-card orange">
+                <h3>Calidad</h3>
+                <div class="metric-value" id="calidad">--</div>
+                <div class="metric-bar">
+                    <div class="bar-fill" id="calidadBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="waveform-container">
+            <h3>Forma de onda respiratoria</h3>
+            <canvas id="waveform"></canvas>
+        </div>
+
+        <div class="evaluation-panel">
+            <h3>Evaluación del Ejercicio</h3>
+            <div id="evaluation" class="evaluation-content">
+                <p>Presiona "Iniciar Análisis" para comenzar el monitoreo</p>
+            </div>
+        </div>
+
+        <div class="instructions-panel">
+            <h3>Instrucciones</h3>
+            <ul>
+                <li>Permita el acceso al micrófono cuando se solicite</li>
+                <li>Respire normalmente cerca del micrófono</li>
+                <li>El sistema analizará la fuerza, duración y calidad de su respiración</li>
+                <li>Los colores indican: Verde (Excelente), Amarillo (Bueno), Rojo (Mejorar)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
